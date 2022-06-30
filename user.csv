@@ -1,0 +1,6 @@
+firstname;lastname;password;username;description;ou;groups;homedirectory;homedrive
+Archard;Dupont;poo2ua5Ei;a.dupont;Service Administratif;OU=Utilisateurs,OU=FICTION,DC=fiction,DC=local;FIC_ADM_USER;\\FIC-AD\Perso\a.dupont;P
+France;Paradis;aeZa5ieph;f.paradis;Directeur General;OU=Utilisateurs,OU=FICTION,DC=fiction,DC=local;FIC_DIR_DG;\\FIC-AD\Perso\f.paradis;P
+Verrill;Rodrigue;cio0Laesh7;v.rodrigue;Assistant Direction;OU=Utilisateurs,OU=FICTION,DC=fiction,DC=local;FIC_DIR_ASS;\\FIC-AD\Perso\v.rodrigue;P
+Claire;Villeneuve;uGeizo8eiqu;c.villeneuve;Responsble P1;OU=Utilisateurs,OU=FICTION,DC=fiction,DC=local;FIC_P1_RESP;\\FIC-AD\Perso\c.villeneuve;P
+Arnaud;edouard;ahY4fah6;a.edouard;Service P1;OU=Utilisateurs,OU=FICTION,DC=fiction,DC=local;FIC_P1_USER;\\FIC-AD\Perso\a.edouard;P
