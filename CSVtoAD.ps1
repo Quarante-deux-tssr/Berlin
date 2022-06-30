@@ -1,6 +1,6 @@
-#Entrez un chemin d’accès vers votre fichier d’importation CSV
+#Entrez un chemin dâ€™accÃ¨s vers votre fichier dâ€™importation CSV
 
-$csv = Import-csv -Path "Chemin CSV" -Delimiter ";"
+$csv = Import-csv -Path "user.csv" -Delimiter ";"
 
 
 foreach ($User in $csv)
@@ -8,17 +8,17 @@ foreach ($User in $csv)
         #Variable
        $Username = $User.username
 
-       #Vérifiez si le compte utilisateur existe déjà dans AD
+       #VÃ©rifiez si le compte utilisateur existe dÃ©jÃ  dans AD
        if (Get-ADUser -F {SamAccountName -eq $Username})
        {
-               #Si l’utilisateur existe, éditez un message d’avertissement
+               #Si lâ€™utilisateur existe, Ã©ditez un message dâ€™avertissement
                Write-Warning "Le compte utilisateur $Username existe deja dans Active Directory."
        }
        else
        {
         
-        #Si un utilisateur n’existe pas, créez un nouveau compte utilisateur
-        #Le compte sera créé dans I’unité d’organisation indiquée dans la variable $OU du fichier CSV ; n’oubliez pas de changer le nom de domaine dans la variable « -UserPrincipalName ».
+        #Si un utilisateur nâ€™existe pas, crÃ©ez un nouveau compte utilisateur
+        #Le compte sera crÃ©Ã© dans Iâ€™unitÃ© dâ€™organisation indiquÃ©e dans la variable $OU du fichier CSV ; nâ€™oubliez pas de changer le nom de domaine dans la variable Â« -UserPrincipalName Â».
         New-ADUser `
             -SamAccountName $Username `
             -UserPrincipalName "$Username@berlin.local" `
@@ -35,7 +35,7 @@ foreach ($User in $csv)
        # Ajout de l'utilisateur dans un groupe
        Add-ADGroupMember -Identity $User.groups -Members $Username
 
-       # Création du dossier PERSO
+       # CrÃ©ation du dossier PERSO
        New-Item -ItemType Directory -Path C:\Perso -Name $User.username
 
        # ACL sur le dossier PERSO
